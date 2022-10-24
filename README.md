@@ -59,7 +59,7 @@ Once you have registration and login, users should be able to mark resources as 
 
 #### Stretch for Goal 4
 
-- Show the number of times a resource has been favorited on its entry .
+- Show the number of times a resource has been favorited on its entry.
 
 
 ### 🌶 Spicy Features
