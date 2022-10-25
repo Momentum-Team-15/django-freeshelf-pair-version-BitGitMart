@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-lvy3@x8-mbcoi*7gp1z^$v!jfiy38pzj51h%06(ncjjfzr#%w@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True 
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'freeshelf', 
 ]
+
+LOGIN_REDIRECT_URL= 'home'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

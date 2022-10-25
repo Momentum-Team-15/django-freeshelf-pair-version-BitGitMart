@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="title">Resources</h2>
+<a href="{% url 'login' %}" class="btn btn-outline-secondary btn-sm">login</a>
+
+<a href="{% url 'auth_logout' %}">logout</a>
+{% for resource in resources %}
+
+<div>
+    <h3>{{ resource.title }}</h3>
+    <h5>{{ resource.author }}</h5>
+    <h6>{{ resource.description }}</h6>
+    <p> {{ resource.created_at }}</p>
+</div>
+{% endfor %}
+{% endblock %}

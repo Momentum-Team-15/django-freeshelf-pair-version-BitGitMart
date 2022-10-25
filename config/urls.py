@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from freeshelf import views
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('resources/new', views.create_resource, name='create_resource'),
+    path('', views.index, name='home'),
+    path("accounts/", include("django.contrib.auth.urls")),
     path('accounts/', include('registration.backends.simple.urls')),
-]
+] 
