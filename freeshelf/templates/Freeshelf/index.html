@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body>
+<div class = "login_cred">
+<a href="{% url 'login' %}" class="btn btn-outline-secondary btn-sm">login- </a>
+<a href="{% url 'auth_logout' %}"> -logout</a>
+</div> 
+
+<div class="categories">
+    <h3>Categories:</h3>
+   {% for cat in categories %}
+   <a href="{% url 'categories' cat.slug %}">{{ cat }}</a>
+   {% endfor %} 
+</div>
+
+<h2 class="title">Resources</h2>
+<div class = resourceContainer>
+<br> 
+<br>
+{% for resource in resources %}
+<div class="resource">
+<h3>{{ resource.title }}</h3>
+<h5>{{ resource.author }}</h5>
+<h5>{{ resource.Published_year }}</h5>
+<br> 
+<br>
+<a href={{ resource.link }}>{{ resource.link }}</a>
+<br>
+<br>
+<h5>{{ resource.description }}</h5>
+<p> {{ resource.created_at }}</p>
+<small>
+    <a href="{% url 'favorite' resource_pk=resource.pk %}">Favorite</a>
+    <a href="{% url 'categories' resource.category %}">{{ resource.category }}</a>
+    <a href="{% url 'edit_resource' resource.id %}">Edit</a>
+    <a href="{% url 'delete_resource' resource.id %}">Delete</a>
+</small>
+</div>
+{% endfor %}
+</div>
+</body>
+{% endblock %}

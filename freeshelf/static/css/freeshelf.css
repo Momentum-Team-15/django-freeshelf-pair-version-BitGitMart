@@ -1,0 +1,44 @@
+body {
+    background-color: darkslategrey; 
+    color: white;
+}
+
+.resource {
+    padding: 75px;
+    margin: 25px; 
+    width: 400px;
+    height: 600px;
+    border: 1px solid grey;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.resourceContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    white-space: 300px;  
+}
+
+h2 {
+    color: lightgreen; 
+    display: flex; 
+    justify-content: center; 
+}
+
+.title {
+    color: lightgreen;
+    display: flex; 
+    justify-content: center; 
+}
+
+.login_cred {
+    display: flex; 
+    justify-content: center;
+    margin: 20px;
+}
+
+.categories {
+    color: lightgreen;
+    margin-left: 20px;
+}
