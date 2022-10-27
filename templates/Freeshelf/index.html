@@ -1,17 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2 class="title">Resources</h2>
 <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-sm">login</a>
 
 <a href="{% url 'auth_logout' %}">logout</a>
-{% for resource in resources %}
 
 <div>
-    <h3>{{ resource.title }}</h3>
-    <h5>{{ resource.author }}</h5>
-    <h6>{{ resource.description }}</h6>
-    <p> {{ resource.created_at }}</p>
+    <h3>Categories:</h3>
+   {% for cat in categories %}
+   <a href="{% url 'categories' cat.slug %}">{{ cat }}</a>
+   {% endfor %} 
 </div>
+
+<h2 class="title">Resources</h2>
+{% for resource in resources %}
+<h3>{{ resource.title }}</h3>
+<h5>{{ resource.author }}</h5>
+<h5>{{ resource.Published_year }}</h5>
+<a href={{ resource.link }}>{{ resource.link }}</a>
+<h5>{{ resource.description }}</h5>
+<p> {{ resource.created_at }}</p>
+<small>
+    <a href="{% url 'favorite' resource_pk=resource.pk %}">Favorite</a>
+    <a href="{% url 'categories' resource.category %}">{{ resource.category }}</a>
+    <a href="{% url 'edit_resource' resource.id %}">Edit</a>
+    <a href="{% url 'delete_resource' resource.id %}">Delete</a>
+</small>
+
 {% endfor %}
 {% endblock %}

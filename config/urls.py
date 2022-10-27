@@ -25,4 +25,8 @@ urlpatterns = [
     path('', views.index, name='home'),
     path("accounts/", include("django.contrib.auth.urls")),
     path('accounts/', include('registration.backends.simple.urls')),
+    path('resources/delete/<resource_id>', views.delete_resource, name='delete_resource'),
+    path('resources/edit/<resource_id>', views.edit_resource, name='edit_resource'),
+    path('category/<slug:slug>/', views.category, name='categories'),
+    path('favorite/new/<int:resource_pk>', views.add_favorite, name='favorite') 
 ] 
